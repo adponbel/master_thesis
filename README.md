@@ -1,6 +1,6 @@
 # master_thesis
 
-The master thesis is written as a paper. It is divided in two differentiated sections, a comparison study of different 16S marker gene pipelines and a pilot study using the pipeline that present a better accuracy.
+The master thesis is written as a paper following the format required on bioinformatics journal. It is divided in two differentiated sections, a comparison study of different 16S marker gene pipelines using two mock communities and a pilot study using the pipeline that presents a better accuracy.
 
 
 ## Adapter removal
