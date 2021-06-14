@@ -5,11 +5,11 @@ The master thesis is written as a paper following the format required on bioinfo
 
 ## Adapter removal
 
-First the adapters are removed using adapter_removal.sh, which uses cutadapt to detect and remove the adapters. The scripts needs four arguments:
--First argument:\ input directory that contains the forward and reverse reads of the samples compressed in gz format.
--Second argument:\ output path were the output directory 'adapter_trimmed' will be created. It will contain the resulting files with the reads without the adapters.
--Third argument:\ forward adapter
--Fourth argument:\ reverse adapter
+First the adapters are removed using adapter_removal.sh, which uses cutadapt to detect and remove the adapters. The scripts needs four arguments:\n
+-First argument: input directory that contains the forward and reverse reads of the samples compressed in gz format.\n
+-Second argument: output path were the output directory 'adapter_trimmed' will be created. It will contain the resulting files with the reads without the adapters.\n
+-Third argument: forward adapter.\n
+-Fourth argument: reverse adapter.\n
 
 Two mock communities are used for the pipeline comparison study. One is ZYMOSearch mock community (from now on zymomock community), sequenced at ADM-biopolis. The other one, mock16, can be retrieved from mockoriobiota github page. 
 Zymomock and the data from the pilot study were sequenced at region V3-V4 of 16S, while mock16 was sequenced at V4 region. Therefore, the adapters to trim are different for the three sets of data:
