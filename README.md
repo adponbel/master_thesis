@@ -14,6 +14,7 @@ First the adapters are removed using adapter_removal.sh, which uses cutadapt to 
 Two mock communities are used for the pipeline comparison study. One is ZYMOSearch mock community (from now on zymomock community), sequenced at ADM-biopolis. The other one, mock16, can be retrieved from mockoriobiota github page. 
 Zymomock and the data from the pilot study were sequenced at region V3-V4 of 16S, while mock16 was sequenced at V4 region. Therefore, the adapters to trim are different for the three sets of data:
 
+```
 #zymomock community
 mkdir comparison_study/zymomock/
 ./adapter_removal.sh PATH_TO_ZYMOMOCK_SAMPLES comparison_study/zymomock/ CCTACGGGNGGCWGCAG GACTACHVGGGTATCTAATCC
@@ -24,7 +25,7 @@ mkdir comparison_study/mock16/
 
 #real data for pilot study
 ./adapter_removal.sh PATH_TO_PILOT_STUDY_SAMPLES pilot_study/ CCTACGGGNGGCWGCAG GACTACHVGGGTATCTAATCC
-
+```
 
 ## Comparison study 
 
@@ -38,9 +39,12 @@ Scripts are inside reads_processing_comparison folder. Running reads_processing_
 -Third argument: position to truncate forward reads on dada2 pipeline
 -Fourth argument: position to truncate reverse reads on dada2 pipeline
 
-We run the script witn each mock community
+We run the script with each mock community
+
+```
 ./processing_pipelines.sh zymomock 401 270 250
 ./processing_pipelines.sh mock16 250 200 180
+```
 
 Figures 2 and 3 show the results of the evaluation of the pipelines. The scripts to construct those figures are in figures_2_3 folder. When running reads_processing_comparison.sh, with no needed arguments, tsv files with the results of the pipelines evaluation are created. This scripts calls the alignment.sh script that needs the path to a 16S marker gene database (change it manually at the script). The database used here is SILVA v138, retrieved from https://docs.qiime2.org/2021.4/data-resources/. It is advised to run first database_preparation.sh script from taxonomy_assignment_comparison folder, to extract the specific sequences of the V3-V4 or V4 regions (depending on the mock community) on the SILVA database. It can also work with the path to silva-138-99-seqs.qza, but takes more time to compute.
 
